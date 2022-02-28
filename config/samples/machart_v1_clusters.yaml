@@ -1,0 +1,6 @@
+apiVersion: machart.machart.rd/v1
+kind: Clusters
+metadata:
+  name: clusters-sample
+spec:
+  # TODO(user): Add fields here

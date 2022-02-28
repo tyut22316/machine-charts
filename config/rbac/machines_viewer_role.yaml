@@ -1,0 +1,20 @@
+# permissions for end users to view machines.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: machines-viewer-role
+rules:
+- apiGroups:
+  - machart.machart.rd
+  resources:
+  - machines
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - machart.machart.rd
+  resources:
+  - machines/status
+  verbs:
+  - get

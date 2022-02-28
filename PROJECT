@@ -1,0 +1,34 @@
+domain: machart.rd
+layout:
+- go.kubebuilder.io/v3
+projectName: machine-charts
+repo: github.com/tyut22316/machine-charts
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: machart.rd
+  group: machart
+  kind: Binding
+  path: github.com/tyut22316/machine-charts/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: machart.rd
+  group: machart
+  kind: Clusters
+  path: github.com/tyut22316/machine-charts/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: machart.rd
+  group: machart
+  kind: Machines
+  path: github.com/tyut22316/machine-charts/api/v1
+  version: v1
+version: "3"

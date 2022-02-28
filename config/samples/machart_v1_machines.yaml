@@ -1,0 +1,6 @@
+apiVersion: machart.machart.rd/v1
+kind: Machines
+metadata:
+  name: machines-sample
+spec:
+  # TODO(user): Add fields here

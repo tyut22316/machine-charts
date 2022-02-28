@@ -1,0 +1,24 @@
+# permissions for end users to edit machines.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: machines-editor-role
+rules:
+- apiGroups:
+  - machart.machart.rd
+  resources:
+  - machines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - machart.machart.rd
+  resources:
+  - machines/status
+  verbs:
+  - get

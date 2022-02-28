@@ -1,0 +1,6 @@
+apiVersion: machart.machart.rd/v1
+kind: Binding
+metadata:
+  name: binding-sample
+spec:
+  # TODO(user): Add fields here
