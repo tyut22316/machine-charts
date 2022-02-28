@@ -28,8 +28,25 @@ type McbindingSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	//机器归属人
+	Person string `json:"person,omitempty"`
+	//需不需要直接node中获取消息  但是查询想通过这个bingding去查
+	//操作系统
+	Os string `json:"os,omitempty"`
+	//机器地点
+	Place string `json:"place,omitempty"`
+	//项目信息
+	Project string `json:"project,omitempty"`
+	//板块
+	Unit  string `json:"unit ,omitempty"`
+	//部门
+	Department   string `json:"department  ,omitempty"`
+	//集群信息和集群类型 是否要存储  暂定不需要  global按照cluster 去查询信息时候  已经带上了cluster信息
+	//global 查集体信息的时候  getList   存储类型就很重要了   拿到具体的item再来子集群 检索
+
+
 	// Foo is an example field of Mcbinding. Edit mcbinding_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	//Foo string `json:"foo,omitempty"`
 }
 
 // McbindingStatus defines the observed state of Mcbinding
@@ -38,6 +55,8 @@ type McbindingStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
+
+//标记可以使用Status
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
