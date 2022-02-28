@@ -27,26 +27,26 @@ import (
 	machartv1 "github.com/tyut22316/machine-charts/api/v1"
 )
 
-// BindingReconciler reconciles a Binding object
-type BindingReconciler struct {
+// McbindingReconciler reconciles a Mcbinding object
+type McbindingReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=machart.machart.rd,resources=bindings,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=machart.machart.rd,resources=bindings/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=machart.machart.rd,resources=bindings/finalizers,verbs=update
+//+kubebuilder:rbac:groups=machart.machart.rd,resources=mcbindings,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=machart.machart.rd,resources=mcbindings/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=machart.machart.rd,resources=mcbindings/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
 // TODO(user): Modify the Reconcile function to compare the state specified by
-// the Binding object against the actual cluster state, and then
+// the Mcbinding object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.
 //
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.11.0/pkg/reconcile
-func (r *BindingReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+func (r *McbindingReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
 
 	// TODO(user): your logic here
@@ -55,8 +55,8 @@ func (r *BindingReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *BindingReconciler) SetupWithManager(mgr ctrl.Manager) error {
+func (r *McbindingReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&machartv1.Binding{}).
+		For(&machartv1.Mcbinding{}).
 		Complete(r)
 }

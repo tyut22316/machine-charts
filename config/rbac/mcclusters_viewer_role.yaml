@@ -1,13 +1,13 @@
-# permissions for end users to view clusters.
+# permissions for end users to view mcclusters.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: clusters-viewer-role
+  name: mcclusters-viewer-role
 rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - clusters
+  - mcclusters
   verbs:
   - get
   - list
@@ -15,6 +15,6 @@ rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - clusters/status
+  - mcclusters/status
   verbs:
   - get

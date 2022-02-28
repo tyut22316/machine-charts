@@ -23,17 +23,17 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// MachinesSpec defines the desired state of Machines
-type MachinesSpec struct {
+// McbindingSpec defines the desired state of Mcbinding
+type McbindingSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Machines. Edit machines_types.go to remove/update
+	// Foo is an example field of Mcbinding. Edit mcbinding_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
 }
 
-// MachinesStatus defines the observed state of Machines
-type MachinesStatus struct {
+// McbindingStatus defines the observed state of Mcbinding
+type McbindingStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
@@ -41,24 +41,24 @@ type MachinesStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
-// Machines is the Schema for the machines API
-type Machines struct {
+// Mcbinding is the Schema for the mcbindings API
+type Mcbinding struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   MachinesSpec   `json:"spec,omitempty"`
-	Status MachinesStatus `json:"status,omitempty"`
+	Spec   McbindingSpec   `json:"spec,omitempty"`
+	Status McbindingStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// MachinesList contains a list of Machines
-type MachinesList struct {
+// McbindingList contains a list of Mcbinding
+type McbindingList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Machines `json:"items"`
+	Items           []Mcbinding `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&Machines{}, &MachinesList{})
+	SchemeBuilder.Register(&Mcbinding{}, &McbindingList{})
 }

@@ -1,20 +1,24 @@
-# permissions for end users to view bindings.
+# permissions for end users to edit mcclusters.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: binding-viewer-role
+  name: mcclusters-editor-role
 rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - bindings
+  - mcclusters
   verbs:
+  - create
+  - delete
   - get
   - list
+  - patch
+  - update
   - watch
 - apiGroups:
   - machart.machart.rd
   resources:
-  - bindings/status
+  - mcclusters/status
   verbs:
   - get

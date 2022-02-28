@@ -1,24 +1,20 @@
-# permissions for end users to edit machines.
+# permissions for end users to view mcbindings.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: machines-editor-role
+  name: mcbinding-viewer-role
 rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - machines
+  - mcbindings
   verbs:
-  - create
-  - delete
   - get
   - list
-  - patch
-  - update
   - watch
 - apiGroups:
   - machart.machart.rd
   resources:
-  - machines/status
+  - mcbindings/status
   verbs:
   - get

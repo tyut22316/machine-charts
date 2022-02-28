@@ -78,25 +78,25 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&controllers.BindingReconciler{
+	if err = (&controllers.McbindingReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Binding")
+		setupLog.Error(err, "unable to create controller", "controller", "Mcbinding")
 		os.Exit(1)
 	}
-	if err = (&controllers.ClustersReconciler{
+	if err = (&controllers.McmachinesReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Clusters")
+		setupLog.Error(err, "unable to create controller", "controller", "Mcmachines")
 		os.Exit(1)
 	}
-	if err = (&controllers.MachinesReconciler{
+	if err = (&controllers.McclustersReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Machines")
+		setupLog.Error(err, "unable to create controller", "controller", "Mcclusters")
 		os.Exit(1)
 	}
 	//+kubebuilder:scaffold:builder

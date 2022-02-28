@@ -1,13 +1,13 @@
-# permissions for end users to edit bindings.
+# permissions for end users to edit mcmachines.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: binding-editor-role
+  name: mcmachines-editor-role
 rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - bindings
+  - mcmachines
   verbs:
   - create
   - delete
@@ -19,6 +19,6 @@ rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - bindings/status
+  - mcmachines/status
   verbs:
   - get

@@ -10,7 +10,7 @@ resources:
   controller: true
   domain: machart.rd
   group: machart
-  kind: Binding
+  kind: Mcbinding
   path: github.com/tyut22316/machine-charts/api/v1
   version: v1
 - api:
@@ -19,7 +19,7 @@ resources:
   controller: true
   domain: machart.rd
   group: machart
-  kind: Clusters
+  kind: Mcmachines
   path: github.com/tyut22316/machine-charts/api/v1
   version: v1
 - api:
@@ -28,7 +28,7 @@ resources:
   controller: true
   domain: machart.rd
   group: machart
-  kind: Machines
+  kind: Mcclusters
   path: github.com/tyut22316/machine-charts/api/v1
   version: v1
 version: "3"

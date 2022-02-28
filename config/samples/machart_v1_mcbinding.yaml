@@ -1,6 +1,6 @@
 apiVersion: machart.machart.rd/v1
-kind: Machines
+kind: Mcbinding
 metadata:
-  name: machines-sample
+  name: mcbinding-sample
 spec:
   # TODO(user): Add fields here

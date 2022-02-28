@@ -1,24 +1,20 @@
-# permissions for end users to edit clusters.
+# permissions for end users to view mcmachines.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: clusters-editor-role
+  name: mcmachines-viewer-role
 rules:
 - apiGroups:
   - machart.machart.rd
   resources:
-  - clusters
+  - mcmachines
   verbs:
-  - create
-  - delete
   - get
   - list
-  - patch
-  - update
   - watch
 - apiGroups:
   - machart.machart.rd
   resources:
-  - clusters/status
+  - mcmachines/status
   verbs:
   - get

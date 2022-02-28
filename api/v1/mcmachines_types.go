@@ -23,17 +23,17 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// BindingSpec defines the desired state of Binding
-type BindingSpec struct {
+// McmachinesSpec defines the desired state of Mcmachines
+type McmachinesSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Binding. Edit binding_types.go to remove/update
+	// Foo is an example field of Mcmachines. Edit mcmachines_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
 }
 
-// BindingStatus defines the observed state of Binding
-type BindingStatus struct {
+// McmachinesStatus defines the observed state of Mcmachines
+type McmachinesStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
@@ -41,24 +41,24 @@ type BindingStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
-// Binding is the Schema for the bindings API
-type Binding struct {
+// Mcmachines is the Schema for the mcmachines API
+type Mcmachines struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   BindingSpec   `json:"spec,omitempty"`
-	Status BindingStatus `json:"status,omitempty"`
+	Spec   McmachinesSpec   `json:"spec,omitempty"`
+	Status McmachinesStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// BindingList contains a list of Binding
-type BindingList struct {
+// McmachinesList contains a list of Mcmachines
+type McmachinesList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Binding `json:"items"`
+	Items           []Mcmachines `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&Binding{}, &BindingList{})
+	SchemeBuilder.Register(&Mcmachines{}, &McmachinesList{})
 }
